@@ -47,6 +47,10 @@ function updateTimer() {
     timerElement.innerHTML = `Seconds left to guess: ${seconds}`;
     seconds--;
   }
+  if(seconds == 0){
+    stopGame();
+    loseGame();
+  }
 }
 
 function stopGame() {
@@ -127,11 +131,11 @@ function guess(btn) {
 
 // Sound Synthesis Functions
 const freqMap = {
-    1: 261.6,
-    2: 329.6,
-    3: 392,
-    4: 466.2,
-    5: 276.8
+    1: 230.6,
+    2: 240.6,
+    3: 250,
+    4: 260.2,
+    5: 270.8
   }
   function playTone(btn,len){ 
     o.frequency.value = freqMap[btn]
